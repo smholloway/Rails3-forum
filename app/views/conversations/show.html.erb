@@ -10,6 +10,17 @@
   <%= @conversation.description %>
 </p>
 
+<%= render :partial => 'comments/form' %>
+
+<div id="comments">
+  <% unless @comments.nil? %>
+    <% @comments.each do |c| %>
+      <div class="listing">
+        <%= c.content %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_conversation_path(@conversation) %> |
 <%= link_to 'Back', forum_path(@forum) %>
