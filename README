@@ -8,11 +8,23 @@ What it does
 ------------
 This forum application contains forums, conversations, and comments. Forums are high-level topics; conversations are threads within a specific forum and comments create the conversation.
 
+Getting it run
+--------------
+Clone the git repository
+* git clone https://github.com/smholloway/Rails3-forum.git
+Change directories to the application
+* cd Rails3-forum
+Create the database
+* rake db:migrate
+Start the server
+* rails server
+
 Limitations
 -----------
-* Style is lacking.
 * There is no authentication or authorization.
+* There is no error checking
 * The code has not been thoroughly tested.
+* Lacking style and JavaScript goodness.
 * No fancy nesting or @replies like those provided by Disqus or other modern commenting systems.
 
 Resources

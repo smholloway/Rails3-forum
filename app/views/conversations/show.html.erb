@@ -15,9 +15,11 @@
 <div id="comments">
   <% unless @comments.nil? %>
     <% @comments.each do |c| %>
+      <% unless c.content.nil? %>
       <div class="listing">
         <%= c.content %>
       </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

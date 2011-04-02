@@ -31,7 +31,6 @@ class ConversationsController < ApplicationController
   def new
     #@conversation = Conversation.new
     @conversation = @forum.conversations.build
-    @comment = @conversation.comments.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +48,6 @@ class ConversationsController < ApplicationController
   def create
     #@conversation = Conversation.new(params[:conversation])
     @conversation = @forum.conversations.new(params[:conversation])
-    @comment = @conversation.comments.build
 
     respond_to do |format|
       if @conversation.save
