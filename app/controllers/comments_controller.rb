@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comments = @conversation.comments.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { redirect_to(conversation_path(@conversation)) }
       format.xml  { render :xml => @comments }
     end
   end
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     @comment = @conversation.comments.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { redirect_to(conversation_path(@conversation)) }
       format.xml  { render :xml => @comment }
     end
   end

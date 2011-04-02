@@ -21,7 +21,9 @@
   <% end %>
 </div> <!-- div#conversations -->
 
-<%= link_to 'Edit', edit_forum_path(@forum) %> |
+<div style="display:none">
+  <%= link_to 'Edit', edit_forum_path(@forum) %> |
+</div>
 <%= link_to 'Back', forums_path %> | 
 
 <%= link_to 'New Conversation', new_forum_conversation_path(@forum) %>

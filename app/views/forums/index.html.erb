@@ -4,7 +4,7 @@
 <div class="listing">
   <div><%= link_to forum.title, forum_path(forum) %></div>
   <div><%= forum.description %></div>
-  <div class="actions">
+  <div class="actions" style="display:none">
   <span><%= link_to 'Show', forum %></span>
   <span><%= link_to 'Edit', edit_forum_path(forum) %></span>
   <span><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></span>
