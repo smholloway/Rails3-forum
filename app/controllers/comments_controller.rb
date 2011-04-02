@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.xml
   def index
-    @comments = Comment.all
+    @comments = @conversation.comments.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.xml
   def show
-    @comment = Comment.find(params[:id])
+    @comment = @conversation.comments.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,6 @@ class CommentsController < ApplicationController
   # GET /comments/new
   # GET /comments/new.xml
   def new
-    #@comment = Comment.new
     @comment = @conversation.comments.build
 
     respond_to do |format|
@@ -43,7 +42,6 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.xml
   def create
-    #@comment = Comment.new(params[:comment])
     @comment = @conversation.comments.new(params[:comment])
 
     respond_to do |format|
