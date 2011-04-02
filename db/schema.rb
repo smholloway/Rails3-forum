@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110402172239) do
+ActiveRecord::Schema.define(:version => 20110402194139) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "conversation_id"
   end
 
   create_table "conversations", :force => true do |t|
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110402172239) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "forum_id"
   end
 
   create_table "forums", :force => true do |t|

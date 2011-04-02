@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  #before_filter :load_forum, :except => [:show, :edit, :update]
   before_filter :load_forum
 
   # GET /conversations
@@ -27,7 +28,7 @@ class ConversationsController < ApplicationController
   # GET /conversations/new.xml
   def new
     #@conversation = Conversation.new
-    @conversation = @forum.conversation.new
+    @conversation = @forum.conversations.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,11 +45,11 @@ class ConversationsController < ApplicationController
   # POST /conversations.xml
   def create
     #@conversation = Conversation.new(params[:conversation])
-    @conversation = @forum.conversation.new(params[:conversation])
+    @conversation = @forum.conversations.new(params[:conversation])
 
     respond_to do |format|
       if @conversation.save
-        format.html { redirect_to(@conversation, :notice => 'Conversation was successfully created.') }
+        format.html { redirect_to(forum_conversation_path(@forum, @conversation), :notice => 'Conversation was successfully created.') }
         format.xml  { render :xml => @conversation, :status => :created, :location => @conversation }
       else
         format.html { render :action => "new" }
@@ -87,9 +88,13 @@ class ConversationsController < ApplicationController
 
   private
     def load_forum
-      @forum = Forum.find(params[:forum_id]) rescue redirect_to(forums_path)
-      #if @forum.blank? 
-      #  redirect_to(forums_path)
-      #end
+      if (params[:id])
+        @conversation = Conversation.find(params[:id]) # rescue redirect_to(forum_conversations_path)
+        @forum = @conversation.forum rescue redirect_to(forums_path)
+      elsif (params[:forum_id])
+        @forum = Forum.find(params[:forum_id]) # rescue redirect_to(forums_path)
+      else # conversations index
+        redirect_to(forums_path)
+      end
     end
 end

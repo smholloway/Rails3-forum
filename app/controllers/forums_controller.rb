@@ -14,6 +14,7 @@ class ForumsController < ApplicationController
   # GET /forums/1.xml
   def show
     @forum = Forum.find(params[:id])
+    @conversations = @forum.conversations.all
 
     respond_to do |format|
       format.html # show.html.erb

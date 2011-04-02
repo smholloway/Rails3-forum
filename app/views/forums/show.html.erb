@@ -10,8 +10,16 @@
   <%= @forum.description %>
 </p>
 
+<div id="conversations">
+  <% unless @conversations.nil? %>
+  <% @conversations.each do |conversation| %>
+    <div class="class"><%= link_to conversation.title, conversation_path(conversation) %></div>
+    <div class="description"><%= conversation.description %></div>
+  <% end %>
+  <% end %>
+</div> <!-- div#conversations -->
 
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
-<%= link_to 'Back', forums_path %>
+<%= link_to 'Back', forums_path %> | 
 
 <%= link_to 'New Conversation', new_forum_conversation_path(@forum) %>
