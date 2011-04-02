@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   # GET /comments/new.xml
   def new
     #@comment = Comment.new
-    @comment = @conversation.comment.build
+    @comment = @conversation.comments.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,11 +44,11 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     #@comment = Comment.new(params[:comment])
-    @comment = @conversation.comment.new(params[:comment])
+    @comment = @conversation.comments.new(params[:comment])
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to(@comment, :notice => 'Comment was successfully created.') }
+        format.html { redirect_to(conversation_comments_path(@conversation), :notice => 'Comment was successfully created.') }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
         format.html { render :action => "new" }

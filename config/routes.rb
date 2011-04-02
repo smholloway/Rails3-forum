@@ -1,9 +1,6 @@
 Rails3Forums::Application.routes.draw do
   match 'home' => 'home#index', :as => :home
 
-  # disallow people from creating conversations outside of forums
-  #match '/conversations/*a', :to => redirect('/forums') 
-
   resources :conversations do
     resources :comments
   end
@@ -14,5 +11,6 @@ Rails3Forums::Application.routes.draw do
 
   root :to => "home#index"
 
+  # route all unmatched routes to root
   #match '*a', :to => redirect(:root)
 end

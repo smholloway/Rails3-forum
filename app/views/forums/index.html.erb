@@ -1,11 +1,15 @@
 <h1>Listing forums</h1>
 
 <% @forums.each do |forum| %>
+<div class="listing">
   <div><%= link_to forum.title, forum_path(forum) %></div>
   <div><%= forum.description %></div>
-  <div><%= link_to 'Show', forum %></div>
-  <div><%= link_to 'Edit', edit_forum_path(forum) %></div>
-  <div><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></div>
+  <div class="actions">
+  <span><%= link_to 'Show', forum %></span>
+  <span><%= link_to 'Edit', edit_forum_path(forum) %></span>
+  <span><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></span>
+  </div>
+</div>
 <% end %>
 
 <br />

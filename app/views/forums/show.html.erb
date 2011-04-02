@@ -13,8 +13,10 @@
 <div id="conversations">
   <% unless @conversations.nil? %>
   <% @conversations.each do |conversation| %>
+  <div class="listing">
     <div class="class"><%= link_to conversation.title, conversation_path(conversation) %></div>
     <div class="description"><%= conversation.description %></div>
+  </div>
   <% end %>
   <% end %>
 </div> <!-- div#conversations -->

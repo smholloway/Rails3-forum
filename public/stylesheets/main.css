@@ -1,10 +1,12 @@
 html, body {
   background: #FFF;
   color: #333;
-  font-family: Helvetica, Georgia, sans-serif;
-  font-size: 24px;
+  font-family: Helvetica, "Lucida Grande", Arial, Georgia, sans-serif;
+  font-size: 16px;
   line-height: 1.5em;
-  color: #333;
+}
+a {
+  color: #27B;
 }
 #site {
   margin: auto;
@@ -31,4 +33,11 @@ html, body {
   margin: 30px 0;
   border-top: 1px solid #CCC;
   font-size: 13px;
+}
+
+.listing {
+  margin: 5px;
+  padding: 5px;
+  background: #EFEFEF;
+  border-radius: 5px;
 }
