@@ -2,6 +2,7 @@ Rails3-forum
 ============
 A simple forum application written using Rails 3 
 Seth Holloway (www.sethholloway.com)
+A demonstration application is available at http://rails3-forum.heroku.com/
 
 What it does
 ------------
@@ -9,14 +10,14 @@ This forum application contains forums, conversations, and comments. Forums are 
 
 Limitations
 -----------
-Style is lacking.
-There is no authentication or authorization.
-The code has not been thoroughly tested.
-No fancy nesting or @replies like those provided by Disqus or other modern commenting systems.
+* Style is lacking.
+* There is no authentication or authorization.
+* The code has not been thoroughly tested.
+* No fancy nesting or @replies like those provided by Disqus or other modern commenting systems.
 
 Resources
 ---------
-http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/
-http://nithinbekal.com/2010/rails-avoid-multiple-level-nested-resource-routes/
-http://www.logansbailey.com/2010/10/19/how-to-build-forums-in-rails-3/
-http://net.tutsplus.com/tutorials/other/building-a-forum-from-scratch-with-ruby-on-rails/
+* http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/
+* http://nithinbekal.com/2010/rails-avoid-multiple-level-nested-resource-routes/
+* http://www.logansbailey.com/2010/10/19/how-to-build-forums-in-rails-3/
+* http://net.tutsplus.com/tutorials/other/building-a-forum-from-scratch-with-ruby-on-rails/
