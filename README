@@ -5,3 +5,9 @@ by Seth Holloway (www.sethholloway.com)
 ==Limitations==
 There is no authentication or authorization.
 The code has not been thoroughly tested.
+
+==Resources==
+http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/
+http://nithinbekal.com/2010/rails-avoid-multiple-level-nested-resource-routes/
+http://www.logansbailey.com/2010/10/19/how-to-build-forums-in-rails-3/
+http://net.tutsplus.com/tutorials/other/building-a-forum-from-scratch-with-ruby-on-rails/
