@@ -1,0 +1,13 @@
+<h1>Listing forums</h1>
+
+<% @forums.each do |forum| %>
+  <div><%= link_to forum.title, forum_path(forum) %></div>
+  <div><%= forum.description %></div>
+  <div><%= link_to 'Show', forum %></div>
+  <div><%= link_to 'Edit', edit_forum_path(forum) %></div>
+  <div><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></div>
+<% end %>
+
+<br />
+
+<%= link_to 'New Forum', new_forum_path %>
