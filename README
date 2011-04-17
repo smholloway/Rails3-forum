@@ -4,6 +4,8 @@ A simple forum application written using Rails 3
 Seth Holloway (www.sethholloway.com)
 A demo is available at http://rails3-forum.heroku.com/
 
+This example differs from the Rails3-Forums-Without-Nesting project by using extra routes. This application has forums/id/topics/id and topics/id, while the 'without-nesting' example had only forums/id/topics/id.
+
 What it does
 ------------
 This forum application contains forums, conversations, and comments. Forums are high-level topics; conversations are threads within a specific forum and comments create the conversation.
